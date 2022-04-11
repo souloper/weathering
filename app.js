@@ -27,14 +27,15 @@ app.post("/", async (req, res) => {
 
     const weatherData = await response.json();
 
-    //console.log(weatherData);
+    console.log(weatherData);
     
-    const temp = Math.floor(weatherData.main.temp);
+    //const temp = Math.floor(weatherData.main.temp);
+    const temp = weatherData.main.temp;
     const desc = weatherData.weather[0].description;
     const icon = weatherData.weather[0].icon;
     const imageURL =  `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
-
+    console.log(temp);
 
     const sendData = {};
     sendData.temp = temp;
